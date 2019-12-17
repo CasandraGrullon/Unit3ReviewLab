@@ -43,6 +43,19 @@ struct FavoritesAPIClient {
             completion(.failure(.badURL(endpointURL)))
             return
         }
-        
+        let request = URLRequest(url: url)
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            switch result {
+            case .failure(let appError):
+                completion(.failure(.networkClientError(appError)))
+            case .success(let data):
+                do {
+                    let favorites = try JSONDecoder().decode([Favorite].self, from: data)
+                    completion(.success(favorites))
+                } catch {
+                    completion(.failure(.decodingError(error)))
+                }
+            }
+        }
     }
 }
