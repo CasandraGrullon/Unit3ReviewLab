@@ -1,5 +1,5 @@
 //
-//  Podcast.swift
+//  Favorite.swift
 //  Unit3ReviewLab
 //
 //  Created by casandra grullon on 12/16/19.
@@ -8,15 +8,9 @@
 
 import Foundation
 
-struct Podcast: Decodable {
-    let results: [Results]
-}
-struct Results: Decodable {
-    let trackId: Int
-    let artistName: String
+struct Favorite: Codable {
+    let trackId : Int
+    let favoritedBy: String
     let collectionName: String
-    let artworkUrl60: String
     let artworkUrl600: String
-    let genres: [String]
 }
-
