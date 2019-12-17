@@ -92,16 +92,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-p9-jrW">
-                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-UR-Rym">
-                                <rect key="frame" x="20" y="377" width="374" height="41"/>
+                                <rect key="frame" x="20" y="556" width="374" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cQ-eI-tkd">
-                                <rect key="frame" x="20" y="426" width="374" height="21"/>
+                                <rect key="frame" x="20" y="605" width="374" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5Xs-UR-Rym" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" constant="20" id="K07-Eg-XoI"/>
-                            <constraint firstItem="IIA-p9-jrW" firstAttribute="height" secondItem="hRW-Mt-slR" secondAttribute="height" multiplier="0.3" id="Mmx-Kt-u0Q"/>
+                            <constraint firstItem="IIA-p9-jrW" firstAttribute="height" secondItem="hRW-Mt-slR" secondAttribute="height" multiplier="0.5" id="Mmx-Kt-u0Q"/>
                             <constraint firstItem="1cQ-eI-tkd" firstAttribute="top" secondItem="5Xs-UR-Rym" secondAttribute="bottom" constant="8" id="O1T-zM-XcP"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" id="PBa-Dw-ZoG"/>
                             <constraint firstItem="5Xs-UR-Rym" firstAttribute="top" secondItem="IIA-p9-jrW" secondAttribute="bottom" constant="20" id="QND-tH-FCC"/>
@@ -169,6 +169,9 @@
                         <viewLayoutGuide key="safeArea" id="1TU-ob-0ud"/>
                     </view>
                     <navigationItem key="navigationItem" id="ee9-fN-YKF"/>
+                    <connections>
+                        <outlet property="tableView" destination="eK5-qo-BHm" id="3C1-1B-0SV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdM-X3-lFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

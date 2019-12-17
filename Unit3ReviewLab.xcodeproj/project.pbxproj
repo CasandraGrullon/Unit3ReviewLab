@@ -24,6 +24,7 @@
 		C6338B3A23A916DA001A5F7B /* PodcastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B3923A916DA001A5F7B /* PodcastAPIClient.swift */; };
 		C6338B3D23A9218A001A5F7B /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B3C23A9218A001A5F7B /* ShowAlert.swift */; };
 		C6338B3F23A924AD001A5F7B /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B3E23A924AD001A5F7B /* PodcastCell.swift */; };
+		C6338B4123A93E42001A5F7B /* FavoritesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B4023A93E42001A5F7B /* FavoritesAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		C6338B3923A916DA001A5F7B /* PodcastAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastAPIClient.swift; sourceTree = "<group>"; };
 		C6338B3C23A9218A001A5F7B /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		C6338B3E23A924AD001A5F7B /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
+		C6338B4023A93E42001A5F7B /* FavoritesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,9 @@
 				C61063FF23A832C00024E4AA /* NetworkHelper.swift */,
 				C610640123A832EC0024E4AA /* AppError.swift */,
 				C610640323A833540024E4AA /* ImageHelper.swift */,
-				C6338B3923A916DA001A5F7B /* PodcastAPIClient.swift */,
 				C6338B3C23A9218A001A5F7B /* ShowAlert.swift */,
+				C6338B3923A916DA001A5F7B /* PodcastAPIClient.swift */,
+				C6338B4023A93E42001A5F7B /* FavoritesAPIClient.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C610640023A832C00024E4AA /* NetworkHelper.swift in Sources */,
+				C6338B4123A93E42001A5F7B /* FavoritesAPIClient.swift in Sources */,
 				C6338B3A23A916DA001A5F7B /* PodcastAPIClient.swift in Sources */,
 				C610640A23A839390024E4AA /* PodcastDetailsController.swift in Sources */,
 				C61063E223A832850024E4AA /* PodcastListController.swift in Sources */,
