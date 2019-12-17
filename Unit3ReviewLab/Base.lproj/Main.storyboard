@@ -101,23 +101,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cQ-eI-tkd">
-                                <rect key="frame" x="20" y="578.5" width="374" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <rect key="frame" x="20" y="607" width="374" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IME-Gz-13E">
+                                <rect key="frame" x="20" y="578.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="1cQ-eI-tkd" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" constant="20" id="5Lr-0P-tqp"/>
+                            <constraint firstItem="CgQ-ux-mVO" firstAttribute="trailing" secondItem="IME-Gz-13E" secondAttribute="trailing" constant="20" id="76e-Yh-9qy"/>
+                            <constraint firstItem="CgQ-ux-mVO" firstAttribute="trailing" secondItem="1cQ-eI-tkd" secondAttribute="trailing" constant="20" id="7o3-J2-dpr"/>
+                            <constraint firstItem="1cQ-eI-tkd" firstAttribute="top" secondItem="IME-Gz-13E" secondAttribute="bottom" constant="8" id="Fl9-tI-8kt"/>
                             <constraint firstItem="5Xs-UR-Rym" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" constant="20" id="K07-Eg-XoI"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="height" secondItem="hRW-Mt-slR" secondAttribute="height" multiplier="0.5" id="Mmx-Kt-u0Q"/>
-                            <constraint firstItem="1cQ-eI-tkd" firstAttribute="top" secondItem="5Xs-UR-Rym" secondAttribute="bottom" constant="8" id="O1T-zM-XcP"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" id="PBa-Dw-ZoG"/>
                             <constraint firstItem="5Xs-UR-Rym" firstAttribute="top" secondItem="IIA-p9-jrW" secondAttribute="bottom" constant="8" id="QND-tH-FCC"/>
-                            <constraint firstItem="1cQ-eI-tkd" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" constant="20" id="S3H-HX-Cgy"/>
                             <constraint firstItem="CgQ-ux-mVO" firstAttribute="trailing" secondItem="IIA-p9-jrW" secondAttribute="trailing" id="UdS-Ky-72c"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="centerX" secondItem="hRW-Mt-slR" secondAttribute="centerX" id="a20-c1-NNT"/>
-                            <constraint firstItem="CgQ-ux-mVO" firstAttribute="trailing" secondItem="1cQ-eI-tkd" secondAttribute="trailing" constant="20" id="dkz-zF-4ze"/>
+                            <constraint firstItem="IME-Gz-13E" firstAttribute="top" secondItem="5Xs-UR-Rym" secondAttribute="bottom" constant="8" id="grK-Xf-6bw"/>
+                            <constraint firstItem="IME-Gz-13E" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" constant="20" id="rgX-PE-4M0"/>
                             <constraint firstItem="CgQ-ux-mVO" firstAttribute="trailing" secondItem="5Xs-UR-Rym" secondAttribute="trailing" constant="20" id="w84-o1-VCj"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="top" secondItem="CgQ-ux-mVO" secondAttribute="top" id="zjq-7W-XkE"/>
                         </constraints>
@@ -131,6 +140,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="artistNameLabel" destination="IME-Gz-13E" id="jSN-Vl-xcP"/>
                         <outlet property="podcastGenreLabel" destination="1cQ-eI-tkd" id="sPs-7p-C7d"/>
                         <outlet property="podcastImage" destination="IIA-p9-jrW" id="t3Q-Pi-lKP"/>
                         <outlet property="podcastNameLabel" destination="5Xs-UR-Rym" id="Wkz-gB-ShI"/>

@@ -12,6 +12,8 @@ class PodcastDetailsController: UIViewController {
     
     @IBOutlet weak var podcastImage: UIImageView!
     @IBOutlet weak var podcastNameLabel: UILabel!
+    
+    @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var podcastGenreLabel: UILabel!
     
     var podcast: Results?
@@ -41,6 +43,7 @@ class PodcastDetailsController: UIViewController {
             return
         }
         podcastNameLabel.text = podcastPicked.collectionName
+        artistNameLabel.text = podcastPicked.artistName
         podcastGenreLabel.text = podcastPicked.genres.first
         podcastImage.getImage(with: podcastPicked.artworkUrl600) { [weak self] (result) in
             switch result {
@@ -70,6 +73,7 @@ class PodcastDetailsController: UIViewController {
                 self?.podcastArr = podcast
                 DispatchQueue.main.async {
                     self?.podcastNameLabel.text = self?.podcastArr.first?.collectionName
+                    self?.artistNameLabel.text = self?.podcastArr.first?.artistName
                     self?.podcastGenreLabel.text = self?.podcastArr.first?.genres.first
                     self?.podcastImage.getImage(with: self?.podcastArr.first?.artworkUrl600 ?? "") { [weak self] (result) in
                         switch result {
