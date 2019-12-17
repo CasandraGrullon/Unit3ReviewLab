@@ -25,6 +25,7 @@
 		C6338B3D23A9218A001A5F7B /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B3C23A9218A001A5F7B /* ShowAlert.swift */; };
 		C6338B3F23A924AD001A5F7B /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B3E23A924AD001A5F7B /* PodcastCell.swift */; };
 		C6338B4123A93E42001A5F7B /* FavoritesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B4023A93E42001A5F7B /* FavoritesAPIClient.swift */; };
+		C6338B4323A96360001A5F7B /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6338B4223A96360001A5F7B /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C6338B3C23A9218A001A5F7B /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		C6338B3E23A924AD001A5F7B /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		C6338B4023A93E42001A5F7B /* FavoritesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAPIClient.swift; sourceTree = "<group>"; };
+		C6338B4223A96360001A5F7B /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				C6338B3E23A924AD001A5F7B /* PodcastCell.swift */,
 				C610640923A839390024E4AA /* PodcastDetailsController.swift */,
 				C610640723A839180024E4AA /* FavoritesViewController.swift */,
+				C6338B4223A96360001A5F7B /* FavoriteCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				C610640C23A83CCE0024E4AA /* Podcast.swift in Sources */,
 				C61063DE23A832850024E4AA /* AppDelegate.swift in Sources */,
 				C61063E023A832850024E4AA /* SceneDelegate.swift in Sources */,
+				C6338B4323A96360001A5F7B /* FavoriteCell.swift in Sources */,
 				C6338B3F23A924AD001A5F7B /* PodcastCell.swift in Sources */,
 				C610640423A833540024E4AA /* ImageHelper.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  PodcastCell.swift
+//  FavoriteCell.swift
 //  Unit3ReviewLab
 //
 //  Created by casandra grullon on 12/17/19.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class PodcastCell: UITableViewCell {
+class FavoriteCell: UITableViewCell {
 
     @IBOutlet weak var podcastImage: UIImageView!
     @IBOutlet weak var podcastNameLabel: UILabel!
     
-    var podcast: Results?
+    var favorite: Favorite?
     
-    func configureCell(for podcast: Results){
-        podcastNameLabel.text = podcast.collectionName
-        podcastImage.getImage(with: podcast.artworkUrl600 ) { [weak self] (result) in
+    func configureCell(for fave: Favorite){
+        podcastNameLabel.text = fave.collectionName
+        podcastImage.getImage(with: fave.artworkUrl600) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
@@ -30,5 +30,5 @@ class PodcastCell: UITableViewCell {
             }
         }
     }
-
+    
 }

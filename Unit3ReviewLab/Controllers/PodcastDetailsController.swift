@@ -16,10 +16,22 @@ class PodcastDetailsController: UIViewController {
     
     var podcast: Results?
     
+    var favorited = [Favorite]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let vc = segue.destination as? FavoritesViewController else {
+            fatalError("antonio messed up")
+        }
+        vc.podcast = podcast
+    }
+    
     
     func updateUI() {
         guard let podcastPicked = podcast else {
@@ -40,6 +52,7 @@ class PodcastDetailsController: UIViewController {
             }
         }
     }
+    
     
     @IBAction func addToFaves(_ sender: UIBarButtonItem) {
         guard let podcast = podcast else {

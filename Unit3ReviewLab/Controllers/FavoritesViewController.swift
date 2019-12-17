@@ -24,13 +24,12 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     func loadData() {
-        guard let podcast = podcast else {
-            fatalError("no data")
-        }
+     
         FavoritesAPIClient.getFaves { [weak self] (result) in
             switch result {
             case .failure(let appError):
@@ -38,9 +37,31 @@ class FavoritesViewController: UIViewController {
                     self?.showAlert(title: "App Error", message: "\(appError)")
                 }
             case .success(let favorite):
-                self?.favorites = favorite.filter { $0.trackId == podcast.trackId }
+                self?.favorites = favorite
             }
         }
     }
 
+}
+
+extension FavoritesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favorites.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? FavoriteCell else {
+            fatalError("cell incorrect")
+        }
+        let fave = favorites[indexPath.row]
+        
+        cell.configureCell(for: fave)
+        
+        return cell
+    }
+}
+
+extension FavoritesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
 }

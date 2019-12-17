@@ -95,15 +95,15 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-UR-Rym">
-                                <rect key="frame" x="20" y="556" width="374" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <rect key="frame" x="20" y="556" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cQ-eI-tkd">
-                                <rect key="frame" x="20" y="605" width="374" height="21"/>
+                                <rect key="frame" x="20" y="590.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -126,7 +126,7 @@
                     <navigationItem key="navigationItem" id="HVm-X3-OCf">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Q36-pR-Dh7">
                             <connections>
-                                <action selector="addToFaves:" destination="i8s-Se-tqE" id="qYZ-Iz-cq4"/>
+                                <action selector="addToFaves:" destination="i8s-Se-tqE" id="ZLI-9r-Hnb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="2263.768115942029" y="116.51785714285714"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Favorites-->
         <scene sceneID="PSU-Ek-Fob">
             <objects>
                 <viewController id="mIW-kj-2kH" customClass="FavoritesViewController" customModule="Unit3ReviewLab" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,13 +152,39 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteCell" id="Yyk-sC-6Ob">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteCell" rowHeight="199" id="LyE-JJ-loV" customClass="FavoriteCell" customModule="Unit3ReviewLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="199"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yyk-sC-6Ob" id="taW-be-ch8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LyE-JJ-loV" id="0Kt-b1-1OJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pko-Q0-Smk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="199"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="bd4-74-k2G"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6r-K9-z0t">
+                                                    <rect key="frame" x="158" y="19" width="228" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="D6r-K9-z0t" firstAttribute="top" secondItem="0Kt-b1-1OJ" secondAttribute="topMargin" constant="8" id="Cgq-aZ-1AU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="D6r-K9-z0t" secondAttribute="trailing" constant="8" id="GpB-ZV-gth"/>
+                                                <constraint firstItem="pko-Q0-Smk" firstAttribute="leading" secondItem="0Kt-b1-1OJ" secondAttribute="leading" id="PNb-Hu-QHE"/>
+                                                <constraint firstItem="D6r-K9-z0t" firstAttribute="leading" secondItem="pko-Q0-Smk" secondAttribute="trailing" constant="8" id="SZF-LN-VSF"/>
+                                                <constraint firstAttribute="bottom" secondItem="pko-Q0-Smk" secondAttribute="bottom" id="k5d-Ae-n9N"/>
+                                                <constraint firstItem="pko-Q0-Smk" firstAttribute="top" secondItem="0Kt-b1-1OJ" secondAttribute="top" id="viW-fg-prm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="podcastImage" destination="pko-Q0-Smk" id="lOh-zz-KGL"/>
+                                            <outlet property="podcastNameLabel" destination="D6r-K9-z0t" id="tPW-ls-cxX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -172,14 +198,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1TU-ob-0ud"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ee9-fN-YKF"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="ee9-fN-YKF"/>
                     <connections>
                         <outlet property="tableView" destination="eK5-qo-BHm" id="3C1-1B-0SV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdM-X3-lFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="832"/>
+            <point key="canvasLocation" x="1726.0869565217392" y="819.64285714285711"/>
         </scene>
         <!--Podcasts-->
         <scene sceneID="oDH-H1-LBw">
@@ -212,7 +238,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="y7y-aH-Zjw" kind="relationship" relationship="viewControllers" id="AST-ee-NIV"/>
-                        <segue destination="LWM-JT-Ihk" kind="relationship" relationship="viewControllers" id="mah-Nj-UbE"/>
+                        <segue destination="P4p-Rw-pCA" kind="relationship" relationship="viewControllers" id="avM-Kz-bAV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKa-pI-iw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,23 +246,23 @@
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
         <!--Favorites-->
-        <scene sceneID="jBi-aU-sI8">
+        <scene sceneID="dTf-iA-Q2m">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LWM-JT-Ihk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="3zZ-PM-ji0"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P4p-Rw-pCA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="5rx-Mn-uZf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c2L-y7-hkT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tKQ-lQ-fhu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mIW-kj-2kH" kind="relationship" relationship="rootViewController" id="xa8-Jr-sMY"/>
+                        <segue destination="mIW-kj-2kH" kind="relationship" relationship="rootViewController" id="zAC-uf-RCG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uZz-7o-ol6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FsF-wt-bNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="832"/>
+            <point key="canvasLocation" x="815.94202898550736" y="819.64285714285711"/>
         </scene>
     </scenes>
     <resources>
