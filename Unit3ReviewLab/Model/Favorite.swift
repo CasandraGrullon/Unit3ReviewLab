@@ -10,7 +10,6 @@ import Foundation
 
 struct Favorite: Codable {
     let trackId : Int
-    let favoritedBy: String
     let collectionName: String
     let artworkUrl600: String
 }

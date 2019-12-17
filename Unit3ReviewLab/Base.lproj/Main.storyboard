@@ -124,7 +124,11 @@
                         <viewLayoutGuide key="safeArea" id="CgQ-ux-mVO"/>
                     </view>
                     <navigationItem key="navigationItem" id="HVm-X3-OCf">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Q36-pR-Dh7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Q36-pR-Dh7">
+                            <connections>
+                                <action selector="addToFaves:" destination="i8s-Se-tqE" id="qYZ-Iz-cq4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="podcastGenreLabel" destination="1cQ-eI-tkd" id="sPs-7p-C7d"/>

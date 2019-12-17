@@ -40,6 +40,29 @@ class PodcastDetailsController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func addToFaves(_ sender: UIBarButtonItem) {
+        guard let podcast = podcast else {
+            showAlert(title: "App Error", message: "Issue uploading data")
+            return
+        }
+        
+        let favorite = Favorite(trackId: podcast.trackId, collectionName: podcast.collectionName, artworkUrl600: podcast.artworkUrl600)
+        
+        FavoritesAPIClient.postFaves(favorite: favorite) { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: "\(appError)")
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "♥️", message: "successfully added to your favorites")
+                }
+            }
+        }
+        
+    }
+    
 
 }
