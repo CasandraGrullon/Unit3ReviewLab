@@ -44,6 +44,8 @@ class FavoritesViewController: UIViewController {
                 self?.favorites = favorite
             }
         }
+        
+     
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
