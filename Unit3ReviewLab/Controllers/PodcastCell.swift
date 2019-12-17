@@ -19,7 +19,7 @@ class PodcastCell: UITableViewCell {
         podcastNameLabel.text = podcast.collectionName
         podcastNameLabel.numberOfLines = 0
         
-        podcastImage.getImage(with: podcast.artworkUrl60 ) { (result) in
+        podcastImage.getImage(with: podcast.artworkUrl100 ) { (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {

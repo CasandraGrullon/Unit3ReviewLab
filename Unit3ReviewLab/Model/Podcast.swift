@@ -15,7 +15,7 @@ struct Results: Decodable {
     let trackId: Int
     let artistName: String
     let collectionName: String
-    let artworkUrl60: String
+    let artworkUrl100: String
     let artworkUrl600: String
     let genres: [String]
 }

@@ -21,15 +21,22 @@ class PodcastListController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadData()
-        tableView.dataSource = self
-        tableView.delegate = self
+    var searchQuery = "" {
+        didSet{
+            loadData(for: searchQuery)
+        }
     }
     
-    private func loadData(){
-        PodcastAPIClient.getPodcasts { [weak self] (result) in
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData(for: "swift")
+        tableView.dataSource = self
+        tableView.delegate = self
+        searchBar.delegate = self
+    }
+
+    private func loadData(for search: String){
+        PodcastAPIClient.getPodcasts(for: search) { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 DispatchQueue.main.async {
@@ -41,6 +48,12 @@ class PodcastListController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let podcastDetail = segue.destination as? PodcastDetailsController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("could not segue properly")
+        }
+        podcastDetail.podcast = podcasts[indexPath.row]
+    }
     
 }
 
@@ -63,5 +76,14 @@ extension PodcastListController: UITableViewDataSource {
 extension PodcastListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
+    }
+}
+
+extension PodcastListController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchQuery = searchText
     }
 }
