@@ -15,12 +15,14 @@ class PodcastDetailsController: UIViewController {
     @IBOutlet weak var podcastGenreLabel: UILabel!
     
     var podcast: Results?
+    var favorite: Favorite?
     
     var favorited = [Favorite]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        print(favorite)
     }
     
     
@@ -71,6 +73,7 @@ class PodcastDetailsController: UIViewController {
             case .success:
                 DispatchQueue.main.async {
                     self?.showAlert(title: "♥️", message: "successfully added to your favorites")
+                    
                 }
             }
         }

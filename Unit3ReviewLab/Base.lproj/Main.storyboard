@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Podcast List Controller-->
+        <!--Podcasts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PodcastListController" customModule="Unit3ReviewLab" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-ZN-7uP">
+                            <searchBar contentMode="redraw" placeholder="search by podcast name" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-ZN-7uP">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -73,7 +73,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5Py-De-WSK"/>
+                    <navigationItem key="navigationItem" title="Podcasts" id="5Py-De-WSK"/>
                     <connections>
                         <outlet property="searchBar" destination="9YZ-ZN-7uP" id="J8o-kB-GHc"/>
                         <outlet property="tableView" destination="RR6-Q2-MvC" id="I9h-Lg-yrx"/>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505.7971014492755" y="116.51785714285714"/>
+            <point key="canvasLocation" x="816" y="145"/>
         </scene>
         <!--Podcast Details Controller-->
         <scene sceneID="lSv-9b-xKJ">
@@ -95,13 +95,13 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-UR-Rym">
-                                <rect key="frame" x="20" y="556" width="374" height="26.5"/>
+                                <rect key="frame" x="20" y="544" width="374" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cQ-eI-tkd">
-                                <rect key="frame" x="20" y="590.5" width="374" height="21"/>
+                                <rect key="frame" x="20" y="578.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="height" secondItem="hRW-Mt-slR" secondAttribute="height" multiplier="0.5" id="Mmx-Kt-u0Q"/>
                             <constraint firstItem="1cQ-eI-tkd" firstAttribute="top" secondItem="5Xs-UR-Rym" secondAttribute="bottom" constant="8" id="O1T-zM-XcP"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" id="PBa-Dw-ZoG"/>
-                            <constraint firstItem="5Xs-UR-Rym" firstAttribute="top" secondItem="IIA-p9-jrW" secondAttribute="bottom" constant="20" id="QND-tH-FCC"/>
+                            <constraint firstItem="5Xs-UR-Rym" firstAttribute="top" secondItem="IIA-p9-jrW" secondAttribute="bottom" constant="8" id="QND-tH-FCC"/>
                             <constraint firstItem="1cQ-eI-tkd" firstAttribute="leading" secondItem="CgQ-ux-mVO" secondAttribute="leading" constant="20" id="S3H-HX-Cgy"/>
                             <constraint firstItem="CgQ-ux-mVO" firstAttribute="trailing" secondItem="IIA-p9-jrW" secondAttribute="trailing" id="UdS-Ky-72c"/>
                             <constraint firstItem="IIA-p9-jrW" firstAttribute="centerX" secondItem="hRW-Mt-slR" secondAttribute="centerX" id="a20-c1-NNT"/>
@@ -124,7 +124,7 @@
                         <viewLayoutGuide key="safeArea" id="CgQ-ux-mVO"/>
                     </view>
                     <navigationItem key="navigationItem" id="HVm-X3-OCf">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Q36-pR-Dh7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart.fill" catalog="system" id="Q36-pR-Dh7">
                             <connections>
                                 <action selector="addToFaves:" destination="i8s-Se-tqE" id="ZLI-9r-Hnb"/>
                             </connections>
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kG8-sL-sxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263.768115942029" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1587" y="471"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="PSU-Ek-Fob">
@@ -184,6 +184,7 @@
                                         <connections>
                                             <outlet property="podcastImage" destination="pko-Q0-Smk" id="lOh-zz-KGL"/>
                                             <outlet property="podcastNameLabel" destination="D6r-K9-z0t" id="tPW-ls-cxX"/>
+                                            <segue destination="i8s-Se-tqE" kind="show" identifier="favorite" id="h3X-me-SCZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -205,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdM-X3-lFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726.0869565217392" y="819.64285714285711"/>
+            <point key="canvasLocation" x="816" y="820"/>
         </scene>
         <!--Podcasts-->
         <scene sceneID="oDH-H1-LBw">
@@ -216,6 +217,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ogh-bR-Cq6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.4137047928" blue="0.86374463069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -224,7 +226,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVh-gu-V9w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="117"/>
+            <point key="canvasLocation" x="138" y="145"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fdM-3g-AaB">
@@ -235,6 +237,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.4137047928330817" blue="0.86374463074228491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="y7y-aH-Zjw" kind="relationship" relationship="viewControllers" id="AST-ee-NIV"/>
@@ -243,7 +246,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKa-pI-iw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+            <point key="canvasLocation" x="-652" y="471"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="dTf-iA-Q2m">
@@ -254,6 +257,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tKQ-lQ-fhu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.4137047928" blue="0.86374463069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -262,12 +266,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsF-wt-bNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815.94202898550736" y="819.64285714285711"/>
+            <point key="canvasLocation" x="138" y="820"/>
         </scene>
     </scenes>
     <resources>
         <image name="headphones" catalog="system" width="64" height="52"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h3X-me-SCZ"/>
+    </inferredMetricsTieBreakers>
 </document>

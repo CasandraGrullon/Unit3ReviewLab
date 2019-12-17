@@ -19,7 +19,11 @@ class FavoritesViewController: UIViewController {
             }
         }
     }
+    
+    
     var podcast: Results?
+    
+    var podcastArr = [Results]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,18 @@ class FavoritesViewController: UIViewController {
             case .success(let favorite):
                 self?.favorites = favorite
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "favorite"{
+        guard let podcastDetail = segue.destination as? PodcastDetailsController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("issue in segue")
+        }
+            
+        if podcastDetail.podcast?.trackId == podcastArr.first?.trackId {
+            podcastDetail.favorite = favorites[indexPath.row]
+        }
         }
     }
 
