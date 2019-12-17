@@ -41,7 +41,7 @@ class FavoritesViewController: UIViewController {
                     self?.showAlert(title: "App Error", message: "\(appError)")
                 }
             case .success(let favorite):
-                self?.favorites = favorite
+                self?.favorites = favorite.filter {$0.favoritedBy == "casandra"}
             }
         }
         

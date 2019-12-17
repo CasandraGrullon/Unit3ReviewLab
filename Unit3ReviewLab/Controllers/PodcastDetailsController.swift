@@ -88,10 +88,10 @@ class PodcastDetailsController: UIViewController {
                 
             }
         }
-  
         
-
-
+        
+        
+        
         
         
     }
@@ -102,7 +102,7 @@ class PodcastDetailsController: UIViewController {
             return
         }
         
-        let favorite = Favorite(trackId: podcast.trackId, collectionName: podcast.collectionName, artworkUrl600: podcast.artworkUrl600)
+        let favorite = Favorite(trackId: podcast.trackId, favoritedBy: "casandra", collectionName: podcast.collectionName, artworkUrl600: podcast.artworkUrl600)
         
         FavoritesAPIClient.postFaves(favorite: favorite) { [weak self] (result) in
             switch result {
