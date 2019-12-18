@@ -16,8 +16,8 @@ class PodcastDetailsController: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var podcastGenreLabel: UILabel!
     
-    var podcast: Results?
-    var podcastArr = [Results]()
+    var podcast: Podcast?
+    var podcastArr = [Podcast]()
     var favorite: Favorite?
     
     var favorited = [Favorite]()
@@ -88,15 +88,9 @@ class PodcastDetailsController: UIViewController {
                         }
                     }
                 }
-                
-                
             }
         }
-        
-        
-        
-        
-        
+
         
     }
     

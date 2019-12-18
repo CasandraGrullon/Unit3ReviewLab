@@ -13,7 +13,7 @@ class PodcastListController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var podcasts = [Results](){
+    var podcasts = [Podcast](){
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()

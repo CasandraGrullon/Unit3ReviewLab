@@ -21,9 +21,9 @@ class FavoritesViewController: UIViewController {
     }
     
     
-    var podcast: Results?
+    var podcast: Podcast?
     
-    var podcastArr = [Results]()
+    var podcastArr = [Podcast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class FavoritesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "favorite"{
+        if segue.identifier == "favorite" {
         guard let podcastDetail = segue.destination as? PodcastDetailsController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("issue in segue")
         }

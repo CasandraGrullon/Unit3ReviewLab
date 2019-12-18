@@ -9,7 +9,7 @@
 import Foundation
 
 struct PodcastAPIClient {
-    static func getPodcasts(for search: String, completion: @escaping (Result <[Results], AppError>) -> ()) {
+    static func getPodcasts(for search: String, completion: @escaping (Result <[Podcast], AppError>) -> ()) {
         
         let searchQuery = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "swift"
         
@@ -28,7 +28,7 @@ struct PodcastAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let podcasts = try JSONDecoder().decode(Podcast.self, from: data)
+                    let podcasts = try JSONDecoder().decode(PodcastResults.self, from: data)
                     let results = podcasts.results
                     completion(.success(results))
                 }catch{
@@ -37,7 +37,7 @@ struct PodcastAPIClient {
             }
         }
     }
-    static func getID(for trackId: Int, completion: @escaping (Result<[Results], AppError>) -> () ) {
+    static func getID(for trackId: Int, completion: @escaping (Result<[Podcast], AppError>) -> () ) {
         let endpointURL = "https://itunes.apple.com/search?media=podcast&limit=200&term=\(trackId)"
         
         guard let url = URL(string: endpointURL) else {
@@ -52,7 +52,7 @@ struct PodcastAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let podcasts = try JSONDecoder().decode(Podcast.self, from: data)
+                    let podcasts = try JSONDecoder().decode(PodcastResults.self, from: data)
                     let results = podcasts.results
                     completion(.success(results))
                 } catch {

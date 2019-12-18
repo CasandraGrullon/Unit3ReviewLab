@@ -13,9 +13,9 @@ class PodcastCell: UITableViewCell {
     @IBOutlet weak var podcastImage: UIImageView!
     @IBOutlet weak var podcastNameLabel: UILabel!
     
-    var podcast: Results?
+    var podcast: Podcast?
     
-    func configureCell(for podcast: Results){
+    func configureCell(for podcast: Podcast){
         podcastNameLabel.text = podcast.collectionName
         podcastImage.getImage(with: podcast.artworkUrl600 ) { [weak self] (result) in
             switch result {
