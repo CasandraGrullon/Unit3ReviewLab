@@ -121,9 +121,5 @@ class Unit3ReviewLabTests: XCTestCase {
         // assert
         XCTAssertEqual(podcasts.count, expectedPodcastCount)
     }
-    
-    func testFavorite() {
         
-    }
-    
 }

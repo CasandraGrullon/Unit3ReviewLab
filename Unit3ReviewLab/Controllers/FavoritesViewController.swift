@@ -9,21 +9,17 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var favorites = [Favorite]() {
+    var favorites = [Podcast]() {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-    
-    
     var podcast: Podcast?
-    
-    var podcastArr = [Podcast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +27,16 @@ class FavoritesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         guard let podcastDetail = segue.destination as? PodcastDetailsController, let indexPath = tableView.indexPathForSelectedRow else {
+             fatalError("could not segue properly")
+         }
+         podcastDetail.podcast = favorites[indexPath.row]
+     }
+    
     func loadData() {
-     
-        FavoritesAPIClient.getFaves { [weak self] (result) in
+        PodcastAPIClient.getFaves { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 DispatchQueue.main.async {
@@ -44,22 +46,8 @@ class FavoritesViewController: UIViewController {
                 self?.favorites = favorite.filter {$0.favoritedBy == "casandra"}
             }
         }
-        
-     
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "favorite" {
-        guard let podcastDetail = segue.destination as? PodcastDetailsController, let indexPath = tableView.indexPathForSelectedRow else {
-            fatalError("issue in segue")
-        }
-            
-        if podcastDetail.podcast?.trackId == podcastArr.first?.trackId {
-            podcastDetail.favorite = favorites[indexPath.row]
-        }
-        }
-    }
-
 }
 
 extension FavoritesViewController: UITableViewDataSource {
